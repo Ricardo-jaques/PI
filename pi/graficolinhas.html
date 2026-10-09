@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <canvas id="GraficoLinha"></canvas>
+    </div>
+    <br>
+    <div>
+        <canvas id="GraficoBarra"></canvas>
+    </div>
+</body>
+</html>
+
+<script>
+    const Linha = document.getElementById('GraficoLinha');
+
+    new Chart(Linha, {
+        type:'line',
+       data: {
+           labels:[
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00'
+        ], 
+        datasets:[
+            { 
+        label:'grafico de temperatura ',
+        data: [30,29,28,25,22,23],
+         borderWidth: 3,
+        borderColor: 'red',
+        borderColor: 'orange',
+        backgroundColor: 'black'
+        },
+        {
+          label:'grafico de umidade',
+        data: [80,82,80,85,80,83],
+         borderWidth: 3,
+        borderColor: 'red',
+        borderColor: 'red',
+        backgroundColor: 'black'
+        }
+    ]
+    },
+     options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+  const  Barra = document.getElementById('GraficoBarra');
+
+    new Chart(Barra, {
+        type:'bar',
+       data: {
+           labels:[
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho'
+        ], 
+        datasets:[
+            { 
+        label:'Temperatura Média',
+        data: [22,24,27,23,20,18],
+         borderWidth: 3,
+        borderColor: 'black',
+        backgroundColor: 'yellow'
+        },
+        {
+        label:'Umidade Média',
+        data: [90,89,93,87,88,82],
+         borderWidth: 3,
+        borderColor: 'black',
+        backgroundColor: 'Blue'
+        }
+    ]
+    },
+     options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
